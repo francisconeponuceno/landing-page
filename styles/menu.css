@@ -40,5 +40,41 @@
     height: 70px;
     right: -10px;
     top: -10px;
-    
+    border-radius: 0px 37.5px 0px 42.5px;
+}
+
+.dish-description {
+    color: #434343;
+    text-align: center;
+}
+
+.dish-rate i {
+    color: #e9a209;
+}
+
+.dish-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+@media screen and (max-width: 1170px) {
+    #dishes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dish {
+        width: calc(50% - 12px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dish {
+        width: 100%;
+    }
+
+    #menu .section-subtitle {
+        text-align: center;
+    }
 }
