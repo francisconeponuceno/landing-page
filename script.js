@@ -10,12 +10,28 @@ $(document).ready(function() {
     $(window).on('scroll', function () {
         const header = $('header');
         const scroLLPosition = $(window).scroLLTop() - header.outerHeight();
+        
+        let activeSectionIndex = 0;
 
         if (scroLLPosition <= 0) {
             header.css('box-shadow', 'none');
         } else{
-            header.css('box-shadow', '5px 1px 5px rgba(0, 0, 0, 0.1)')
+            header.css('box-shadow', '5px 1px 5px rgba(0, 0, 0, 0.1)');
         }
+
+        sections.each(function(i) {
+            const section = $(this);
+            const sectionTop = section.offset().top - 96;
+            const sectionBottom = sectionTop+ section.outerHeight();
+
+            if (scroLLPosition >= sectionTop && scroLLPosition < sectionBottom) {
+                activeSectionIndex = i;
+                return false;
+            }
+        })
+
+        $(navItems[activeSectionIndex]).addClass('active');
+
     });
 });
 
