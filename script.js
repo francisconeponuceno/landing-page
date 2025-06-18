@@ -33,6 +33,12 @@ $(document).ready(function() {
         $(navItems[activeSectionIndex]).addClass('active');
 
     });
+
+    ScroLLReveal().reveal('#cta', {
+        origin: 'left',
+        duration: 2000,
+        distance: '20%'
+    });
 });
 
 
